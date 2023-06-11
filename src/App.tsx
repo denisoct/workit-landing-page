@@ -1,4 +1,5 @@
 import { Global, MantineProvider } from "@mantine/core";
+
 import Home from "@pages/Home";
 import fraunces from "./fonts/Fraunces_144pt-SemiBold.ttf";
 import manrope from "./fonts/Manrope-Regular.ttf";
@@ -11,7 +12,7 @@ const GlobalStyles = () => {
           "@font-face": {
             fontFamily: "Fraunces",
             src: `url("${fraunces}") format("truetype")`,
-            fontWeight: 600,
+            fontWeight: "bold",
             fontStyle: "normal",
           },
         },
@@ -19,7 +20,7 @@ const GlobalStyles = () => {
           "@font-face": {
             fontFamily: "Manrope",
             src: `url("${manrope}") format('truetype')`,
-            fontWeight: 400,
+            fontWeight: "normal",
             fontStyle: "normal",
           },
         },
@@ -31,9 +32,16 @@ const GlobalStyles = () => {
 const App = () => {
   return (
     <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
       theme={{
+        breakpoints: {
+          mobile: "23.4375em",
+          tablet: "48em",
+          desktop: "90em",
+        },
         colors: {
-          _yourDarkness: [
+          _darkPurple: [
             "#E9E6EC",
             "#D3CDD8",
             "#BDB4C5",
@@ -45,7 +53,7 @@ const App = () => {
             "#160325",
             "#0E0219",
           ],
-          _seaGreen: [
+          _eucaplyptus: [
             "#ECFFF6",
             "#DAFFEC",
             "#C7FFE3",
@@ -57,7 +65,7 @@ const App = () => {
             "#299961",
             "#1B6640",
           ],
-          _illusionist: [
+          _davysGray: [
             "#EEEDEF",
             "#DEDBE0",
             "#CDCAD0",
@@ -69,7 +77,7 @@ const App = () => {
             "#352E3B",
             "#231F27",
           ],
-          _coldSnow: [
+          _ghostWhite: [
             "#FFFEFF",
             "#FEFEFF",
             "#FEFDFF",
@@ -84,16 +92,9 @@ const App = () => {
         },
         headings: {
           fontFamily: "Fraunces, sans-serif",
-          sizes: {
-            h1: {
-              fontSize: "50px",
-            },
-          },
         },
         fontFamily: "Manrope, sans-serif",
       }}
-      withGlobalStyles
-      withNormalizeCSS
     >
       <GlobalStyles />
       <Home />
