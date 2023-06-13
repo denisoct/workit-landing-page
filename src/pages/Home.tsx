@@ -1,6 +1,8 @@
 import {
   AppShell,
-  Button,
+  Box,
+  Center,
+  Flex,
   Group,
   Header,
   Image,
@@ -9,12 +11,14 @@ import {
   Title,
 } from "@mantine/core";
 
+import PrimaryButton from "@/components/PrimaryButton";
+import SecondaryButton from "@/components/SecondaryButton";
+import imageHero from "../assets/image-hero.webp";
 import logoLight from "../assets/logo-light.svg";
 
 const Home = () => {
   return (
     <AppShell
-      // p="md"
       fixed={false}
       header={
         <Header
@@ -38,45 +42,14 @@ const Home = () => {
         >
           <Group position="apart">
             <Image src={logoLight} width={95.76} height={24.61} alt="Logo" />
-            <Button
-              p={0}
-              radius={0}
-              bg="transparent"
-              fz={{
-                base: 16,
-                desktop: 18,
-              }}
-              fw={700}
-              styles={theme => ({
-                root: {
-                  borderWidth: 0,
-                  borderBottomWidth: 3,
-                  borderBottomColor: theme.colors._eucaplyptus[6],
-                  "&:hover": {
-                    backgroundColor: "transparent",
-                  },
-                },
-                label: {
-                  lineHeight: "32px",
-                  letterSpacing: "-0.16px",
-                  "&:hover": {
-                    color: theme.colors._eucaplyptus[6],
-                  },
-                  [theme.fn.largerThan("desktop")]: {
-                    letterSpacing: "-0.18px",
-                  },
-                },
-              })}
-            >
-              Apply your access
-            </Button>
+            <SecondaryButton label="Apply for access" />
           </Group>
           <Stack
             align="center"
             mx="auto"
             w={{
               mobile: 343,
-              tablet: 573,
+              tablet: 480,
               desktop: 635,
             }}
             sx={theme => ({
@@ -127,41 +100,316 @@ const Home = () => {
               </Text>{" "}
               to your needs.
             </Title>
-            <Button
-              bg="_eucaplyptus"
-              radius={0}
-              size="lg"
-              c="_darkPurple"
-              px={{
-                base: 24,
+            <PrimaryButton label="Learn more" />
+          </Stack>
+          <Box
+            mx="auto"
+            w={{
+              mobile: 320,
+              tablet: 514,
+              desktop: 767,
+            }}
+          >
+            <Image
+              mt={{
+                base: 64,
+                tablet: 55,
+                desktop: 50,
+              }}
+              src={imageHero}
+              alt="Hero"
+            />
+          </Box>
+        </Header>
+      }
+    >
+      <Flex
+        gap={{
+          base: 40,
+          tablet: 48,
+          desktop: 26,
+        }}
+        mt={{
+          base: 155.29,
+          tablet: 203.76,
+          desktop: 255,
+        }}
+        mx="auto"
+        justify="center"
+        align="center"
+        direction={{
+          base: "column",
+          desktop: "row",
+        }}
+      >
+        <Flex
+          justify="center"
+          align="center"
+          gap={{
+            base: 24,
+            tablet: 32,
+            desktop: 26,
+          }}
+          sx={theme => ({
+            [theme.fn.largerThan("desktop")]: {
+              flexBasis: 354,
+            },
+          })}
+          direction={{
+            base: "column",
+            tablet: "row",
+            desktop: "column",
+          }}
+        >
+          <Center
+            w={{ base: 48, desktop: 56 }}
+            h={{ base: 48, desktop: 56 }}
+            sx={theme => ({
+              borderRadius: "50%",
+              borderWidth: 1,
+              borderStyle: "solid",
+              borderColor: theme.colors._davysGray[6],
+            })}
+          >
+            <Title
+              fz={{
+                base: 20,
+                desktop: 24,
+              }}
+            >
+              1
+            </Title>
+          </Center>
+          <Stack
+            w={{
+              base: "100%",
+              tablet: 493,
+              desktop: "100%",
+            }}
+          >
+            <Text
+              sx={theme => ({
+                textAlign: "center",
+                [theme.fn.largerThan("tablet")]: {
+                  textAlign: "left",
+                },
+                [theme.fn.largerThan("desktop")]: {
+                  textAlign: "center",
+                },
+              })}
+              ff="Fraunces"
+              fz={{
+                base: 28,
                 desktop: 32,
               }}
+              mb={{
+                desktop: 28,
+              }}
+              c="_darkPurple"
+            >
+              Actionable Insights
+            </Text>
+            <Text
+              sx={theme => ({
+                textAlign: "center",
+                [theme.fn.largerThan("tablet")]: {
+                  textAlign: "left",
+                },
+                [theme.fn.largerThan("desktop")]: {
+                  textAlign: "center",
+                },
+              })}
               fz={{
                 base: 16,
                 desktop: 18,
               }}
-              styles={theme => ({
-                root: {
-                  "&:hover": {
-                    color: theme.colors._eucaplyptus[6],
-                    backgroundColor: theme.colors._darkPurple[6],
-                  },
+              c="_davysGray"
+            >
+              Optimize your products, improve customer satisfaction and stay
+              ahead of the competition with our product data analytics.
+            </Text>
+          </Stack>
+        </Flex>
+        <Flex
+          justify="center"
+          align="center"
+          gap={{
+            base: 24,
+            tablet: 32,
+            desktop: 26,
+          }}
+          sx={theme => ({
+            [theme.fn.largerThan("desktop")]: {
+              flexBasis: 354,
+            },
+          })}
+          direction={{
+            base: "column",
+            tablet: "row",
+            desktop: "column",
+          }}
+        >
+          <Center
+            w={{ base: 48, desktop: 56 }}
+            h={{ base: 48, desktop: 56 }}
+            sx={theme => ({
+              borderRadius: "50%",
+              borderWidth: 1,
+              borderStyle: "solid",
+              borderColor: theme.colors._davysGray[6],
+            })}
+          >
+            <Title
+              fz={{
+                base: 20,
+                desktop: 24,
+              }}
+            >
+              2
+            </Title>
+          </Center>
+          <Stack
+            w={{
+              base: "100%",
+              tablet: 493,
+              desktop: "100%",
+            }}
+          >
+            <Text
+              ff="Fraunces"
+              fz={{
+                base: 28,
+                desktop: 32,
+              }}
+              mb={{
+                desktop: 28,
+              }}
+              c="_darkPurple"
+              sx={theme => ({
+                textAlign: "center",
+                [theme.fn.largerThan("tablet")]: {
+                  textAlign: "left",
                 },
-                label: {
-                  letterSpacing: "-0.16px",
-                  [theme.fn.largerThan("desktop")]: {
-                    letterSpacing: "-0.18px",
-                  },
+                [theme.fn.largerThan("desktop")]: {
+                  textAlign: "center",
                 },
               })}
             >
-              Learn more
-            </Button>
+              Data-driven decisions
+            </Text>
+            <Text
+              fz={{
+                base: 16,
+                desktop: 18,
+              }}
+              c="_davysGray"
+              sx={theme => ({
+                textAlign: "center",
+                [theme.fn.largerThan("tablet")]: {
+                  textAlign: "left",
+                },
+                [theme.fn.largerThan("desktop")]: {
+                  textAlign: "center",
+                },
+              })}
+            >
+              Make data-driven decisions with our product data analytics. Our
+              AI-generated reports help you unlock insights hidden in your
+              product data.
+            </Text>
           </Stack>
-        </Header>
-      }
-    >
-      <Text fz="30px">Hola</Text>
+        </Flex>
+        <Flex
+          gap={{
+            base: 24,
+            tablet: 32,
+            desktop: 26,
+          }}
+          justify="center"
+          align="center"
+          sx={theme => ({
+            [theme.fn.largerThan("desktop")]: {
+              flexBasis: 354,
+            },
+          })}
+          direction={{
+            base: "column",
+            tablet: "row",
+            desktop: "column",
+          }}
+        >
+          <Center
+            w={{ base: 48, desktop: 56 }}
+            h={{ base: 48, desktop: 56 }}
+            sx={theme => ({
+              borderRadius: "50%",
+              borderWidth: 1,
+              borderStyle: "solid",
+              borderColor: theme.colors._davysGray[6],
+            })}
+          >
+            <Title
+              fz={{
+                base: 20,
+                desktop: 24,
+              }}
+            >
+              3
+            </Title>
+          </Center>
+          <Stack
+            w={{
+              base: "100%",
+              tablet: 493,
+              desktop: "100%",
+            }}
+          >
+            <Text
+              ff="Fraunces"
+              fz={{
+                base: 28,
+                desktop: 32,
+              }}
+              mb={{
+                desktop: 28,
+              }}
+              c="_darkPurple"
+              sx={theme => ({
+                textAlign: "center",
+                [theme.fn.largerThan("tablet")]: {
+                  textAlign: "left",
+                },
+                [theme.fn.largerThan("desktop")]: {
+                  textAlign: "center",
+                },
+              })}
+            >
+              Always affordable
+            </Text>
+            <Text
+              fz={{
+                base: 16,
+                desktop: 18,
+              }}
+              c="_davysGray"
+              fw={400}
+              sx={theme => ({
+                textAlign: "center",
+                [theme.fn.largerThan("tablet")]: {
+                  textAlign: "left",
+                },
+                [theme.fn.largerThan("desktop")]: {
+                  textAlign: "center",
+                },
+              })}
+            >
+              Always affordable pricing that scales with your business. Get
+              top-quality product data analytics services without hidden costs
+              or unexpected fees.
+            </Text>
+          </Stack>
+        </Flex>
+      </Flex>
     </AppShell>
   );
 };
