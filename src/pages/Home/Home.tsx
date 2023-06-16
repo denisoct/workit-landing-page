@@ -15,7 +15,10 @@ import {
 
 import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
-import backgroundHeader from "@assets/background-header.svg";
+import backgroundHeader from "@assets/background-header.png";
+import bgPattern1 from "@assets/bg-pattern-1.svg";
+import bgPattern2 from "@assets/bg-pattern-2.svg";
+import bgPattern3 from "@assets/bg-pattern-3.svg";
 import { ReactComponent as IconFacebook } from "@assets/icon-facebook.svg";
 import { ReactComponent as IconInstagram } from "@assets/icon-instagram.svg";
 import { ReactComponent as IconTwitter } from "@assets/icon-twitter.svg";
@@ -34,10 +37,27 @@ const Home = () => {
           <BackgroundImage
             h={{ base: 481.71, sm: 540.24, xl: 730 }}
             src={backgroundHeader}
-            component="a"
             px={{ base: 16, sm: 39, xl: 165.35 }}
             pt={{ base: 32, sm: 32, xl: 56 }}
           >
+            <Box
+              w={270}
+              pos="absolute"
+              top="10%"
+              left={-80}
+              display={{ base: "none", sm: "block" }}
+            >
+              <Image src={bgPattern1} alt="Pattern 1" fit="contain" />
+            </Box>
+            <Box
+              w={140}
+              pos="absolute"
+              right={0}
+              top="30%"
+              display={{ base: "none", sm: "block" }}
+            >
+              <Image src={bgPattern2} alt="Pattern 2" />
+            </Box>
             <Group position="apart">
               <Image src={logoLight} width={95.76} height={24.61} alt="Logo Light" />
               <SecondaryButton label="Apply for access" />
@@ -159,7 +179,16 @@ const Home = () => {
           p={{ base: 31, sm: 56, xl: 64 }}
           w={{ sm: 630, xl: 730 }}
           spacing={32}
+          pos="relative"
         >
+          <Box
+            w={170}
+            pos="absolute"
+            display={{ base: "none", sm: "block" }}
+            inset="70% 0px 0% 60%"
+          >
+            <Image src={bgPattern3} alt="Pattern 3" />
+          </Box>
           <Title c="white">Be the first to test</Title>
           <Text c="white" fz={{ base: 16, xl: 18 }}>
             Hi, I'm Louis Graham, the founder of the company. Book a demo call with me to
