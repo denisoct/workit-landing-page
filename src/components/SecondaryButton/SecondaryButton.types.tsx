@@ -1,3 +1,1 @@
-export type SecondaryButtonProps = {
-  label: string;
-};
+export type SecondaryButtonProps = { label: string };

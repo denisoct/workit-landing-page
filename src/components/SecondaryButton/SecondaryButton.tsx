@@ -11,11 +11,10 @@ const SecondaryButton: FC<Props> = props => {
       p={0}
       radius={0}
       bg="transparent"
-      fz={{
-        base: 16,
-        desktop: 18,
-      }}
+      fz={{ base: 16, xl: 18 }}
       fw={700}
+      lh="32px"
+      lts={{ base: "-0.16px", xl: "-0.18px" }}
       styles={theme => ({
         root: {
           borderWidth: 0,
@@ -26,13 +25,8 @@ const SecondaryButton: FC<Props> = props => {
           },
         },
         label: {
-          lineHeight: "32px",
-          letterSpacing: "-0.16px",
           "&:hover": {
             color: theme.colors._eucaplyptus[6],
-          },
-          [theme.fn.largerThan("desktop")]: {
-            letterSpacing: "-0.18px",
           },
         },
       })}

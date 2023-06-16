@@ -1,8 +1,8 @@
 import { Global, MantineProvider } from "@mantine/core";
 
-import Home from "@pages/Home";
 import fraunces from "./fonts/Fraunces_144pt-SemiBold.ttf";
 import manrope from "./fonts/Manrope-Regular.ttf";
+import Home from "@pages/Home";
 
 const GlobalStyles = () => {
   return (
@@ -35,11 +35,7 @@ const App = () => {
       withGlobalStyles
       withNormalizeCSS
       theme={{
-        breakpoints: {
-          mobile: "23.4375em",
-          tablet: "48em",
-          desktop: "90em",
-        },
+        breakpoints: { xs: "23.4375em", sm: "48em", xl: "90em" },
         colors: {
           _darkPurple: [
             "#E9E6EC",
@@ -90,9 +86,7 @@ const App = () => {
             "#4C4A4D",
           ],
         },
-        headings: {
-          fontFamily: "Fraunces, sans-serif",
-        },
+        headings: { fontFamily: "Fraunces, sans-serif" },
         fontFamily: "Manrope, sans-serif",
       }}
     >

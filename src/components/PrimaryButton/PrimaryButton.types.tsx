@@ -1,3 +1,1 @@
-export type PrimaryButtonProps = {
-  label: string;
-};
+export type PrimaryButtonProps = { label: string };
